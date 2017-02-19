@@ -11,7 +11,7 @@ void rainbow(int offset)
   for (int i = 0; i < LED_COUNT; i++)
   {
     byte r,g,b;
-    HSV_to_RGB(((i+offset)%LED_COUNT)*360/LED_COUNT, 100, 30, &r, &g, &b);
+    HSV_to_RGB(((i+offset)*360/LED_COUNT)%360, 100, 30, &r, &g, &b);
     strip.setPixelColor(i, strip.Color(r,g,b));
   }
   strip.show();
